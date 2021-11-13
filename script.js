@@ -7,6 +7,7 @@ const getquote=async()=>{
     loader.classList.remove('hide');
     const res=await fetch('https://type.fit/api/quotes');
     const quotes=await res.json();
+    // console.log(quotes)
     loader.classList.add('hide');
     const num=Math.floor(Math.random()*quotes.length);
     // console.log(num);
@@ -19,4 +20,4 @@ const getquote=async()=>{
     tweetBtn.href=`https://twitter.com/intent/tweet?text=${quote}-${authorName}`
 }
 nextBtn.addEventListener('click',getquote);
-getquote()
+getquote();
